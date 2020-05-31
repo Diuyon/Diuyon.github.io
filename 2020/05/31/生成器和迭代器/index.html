@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>生成器和迭代器 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12tag: [生成器, 迭代器]categories: [Python, base]  生成器和迭代器[TOC] 一、生成器1.1 定义 如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间，在Python中，这种一边循环一边计算的机制，称为生成器：generator 。  生成器是一个特殊的程序，可以被用作控">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成器和迭代器">
+<meta property="og:url" content="http://yoursite.com/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12tag: [生成器, 迭代器]categories: [Python, base]  生成器和迭代器[TOC] 一、生成器1.1 定义 如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间，在Python中，这种一边循环一边计算的机制，称为生成器：generator 。  生成器是一个特殊的程序，可以被用作控">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-31T05:43:40.417Z">
+<meta property="article:modified_time" content="2020-05-31T05:48:19.556Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-生成器和迭代器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.417Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      生成器和迭代器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [生成器, 迭代器]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
+
+<h1 id="生成器和迭代器"><a href="#生成器和迭代器" class="headerlink" title="生成器和迭代器"></a>生成器和迭代器</h1><p>[TOC]</p>
+<h2 id="一、生成器"><a href="#一、生成器" class="headerlink" title="一、生成器"></a>一、生成器</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><p> 如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间，在Python中，这种一边循环一边计算的机制，称为生成器：generator 。</p>
+<p> 生成器是一个特殊的程序，可以被用作控制循环的迭代行为，python中生成器是迭代器的一种，使用yield返回值函数，每次调用yield会暂停，而可以使用next()函数和send()函数恢复生成器。 </p>
+<h3 id="1-2-创建"><a href="#1-2-创建" class="headerlink" title="1.2 创建"></a>1.2 创建</h3><h4 id="1-2-1-生成器表达式"><a href="#1-2-1-生成器表达式" class="headerlink" title="1.2.1 生成器表达式"></a>1.2.1 生成器表达式</h4><p> 要创建一个generator，有很多种方法，第一种方法很简单，<strong>只有把一个列表生成式的[]中括号改为（）小括号，就创建一个generator</strong> </p>
+<p><code>(x for x in range(10))</code></p>
+<h4 id="1-2-2-生成器函数"><a href="#1-2-2-生成器函数" class="headerlink" title="1.2.2 生成器函数"></a>1.2.2 生成器函数</h4><p>使用 yiled 进行返回，该函数就成为了一个生成器函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数有了yield之后，函数名+（）就变成了生成器</span></span><br><span class="line"><span class="comment"># return在生成器中代表生成器的中止，直接报错</span></span><br><span class="line"><span class="comment"># next的作用是唤醒并继续执行</span></span><br><span class="line"><span class="comment"># send的作用是唤醒并继续执行，发送一个信息到生成器内部</span></span><br><span class="line"><span class="string">'''生成器'''</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_counter</span><span class="params">(n)</span>:</span></span><br><span class="line">    print(<span class="string">"create_counter"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line">        print(<span class="string">"increment n"</span>)</span><br><span class="line">        n +=<span class="number">1</span></span><br><span class="line"> </span><br><span class="line">gen = create_counter(<span class="number">2</span>)</span><br><span class="line">print(gen)</span><br><span class="line">print(next(gen))</span><br><span class="line">print(next(gen))</span><br><span class="line"> </span><br><span class="line">结果：</span><br><span class="line">&lt;generator object create_counter at <span class="number">0x0000023A1694A938</span>&gt;</span><br><span class="line">create_counter</span><br><span class="line"><span class="number">2</span></span><br><span class="line">increment n</span><br><span class="line"><span class="number">3</span></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-使用"><a href="#1-3-使用" class="headerlink" title="1.3 使用"></a>1.3 使用</h3><ol>
+<li>我们可以使用next()来进行，生成器的下一次输出。next()每次只返回一个结果，知道出现 <code>StopIteration</code>异常就结束。</li>
+<li>也可以使用for循环对生成器进行迭代，for循环会自动捕捉<code>StopIteration</code>，然后结束循环。</li>
+<li>我们可以使用send()函数提前代替yield返回，并且填入我们需要返回的值，达到一种修改函数规则的作用。</li>
+</ol>
+<h3 id="1-4-生成器的优缺点"><a href="#1-4-生成器的优缺点" class="headerlink" title="1.4 生成器的优缺点"></a>1.4 生成器的优缺点</h3><p><strong>优点</strong>：</p>
+<ol>
+<li>不需要占用大量内部，生成器的思想就是，在我们需要得到下一个值时，只需要运行我们存储的函数表达式和上一次运行结果，及时算出下一次结果，不像普通的列表，都将其存入内存。</li>
+<li>能回溯到上一次返回结果的位置，继续往下运行</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>不能知道整体的大小</li>
+</ol>
+<h2 id="二、迭代器（Iterator）"><a href="#二、迭代器（Iterator）" class="headerlink" title="二、迭代器（Iterator）"></a>二、迭代器（Iterator）</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>凡是可以使用next()进行下一次的数据读取的对象，都是一个迭代器。并且也不能用len()进行长度的计算。</p>
+<p><strong>生成器是一个特殊的迭代器，因为它还能使用yield方法，对函数进行操作。</strong></p>
+<h3 id="2-2-创建一个迭代器"><a href="#2-2-创建一个迭代器" class="headerlink" title="2.2 创建一个迭代器"></a>2.2 创建一个迭代器</h3><p>任何可迭代对象都可以被转化为迭代器，只需用iter()对其进行一个类型转换，例如：<code>iter(range(10))</code></p>
+<h2 id="三、可迭代对象（Iterable）"><a href="#三、可迭代对象（Iterable）" class="headerlink" title="三、可迭代对象（Iterable）"></a>三、可迭代对象（Iterable）</h2><h3 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h3><p>任何可被for循环迭代的对象，都是可迭代对象。</p>
+<h3 id="3-2-注意"><a href="#3-2-注意" class="headerlink" title="3.2 注意"></a>3.2 注意</h3><p>list, dict, str, set, range都为可迭代对象，但它们都不是迭代器。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" data-id="ckaunequ60008aotu7wh28aft" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据增强包Albumentation
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">系统操作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">Python传入参数的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/global%E5%92%8Cnonlocal/">global和nonlocal</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/">字典工具包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/">制作词频云图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

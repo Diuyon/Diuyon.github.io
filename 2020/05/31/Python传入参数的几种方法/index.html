@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python传入参数的几种方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12tag: [传参, 底层]categories: [Python, base]  Python传入参数的几种方法[TOC] 一、位置参数位置参数是最简单的传入参数的方式，在其它语言中也常常被使用 1234def func(a, b):    print(a + b)    func(1, 2)  # 3  二、默认参数默认参数是指在定义形参时，给他一个默认的值，当该形参未接收到实参时，使用该默">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python传入参数的几种方法">
+<meta property="og:url" content="http://yoursite.com/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12tag: [传参, 底层]categories: [Python, base]  Python传入参数的几种方法[TOC] 一、位置参数位置参数是最简单的传入参数的方式，在其它语言中也常常被使用 1234def func(a, b):    print(a + b)    func(1, 2)  # 3  二、默认参数默认参数是指在定义形参时，给他一个默认的值，当该形参未接收到实参时，使用该默">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-31T05:43:40.523Z">
+<meta property="article:modified_time" content="2020-05-31T05:51:25.614Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python传入参数的几种方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.523Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python传入参数的几种方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [传参, 底层]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Python传入参数的几种方法"><a href="#Python传入参数的几种方法" class="headerlink" title="Python传入参数的几种方法"></a>Python传入参数的几种方法</h1><p>[TOC]</p>
+<h2 id="一、位置参数"><a href="#一、位置参数" class="headerlink" title="一、位置参数"></a>一、位置参数</h2><p>位置参数是最简单的传入参数的方式，在其它语言中也常常被使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br><span class="line">    </span><br><span class="line">func(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、默认参数"><a href="#二、默认参数" class="headerlink" title="二、默认参数"></a>二、默认参数</h2><p>默认参数是指在定义形参时，给他一个默认的值，当该形参未接收到实参时，使用该默认参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">power</span><span class="params">(x, n=<span class="number">2</span>)</span></span></span><br><span class="line">	s = 1</span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line">        s *= n</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line">power(<span class="number">3</span>)  <span class="comment"># 9</span></span><br><span class="line">power(<span class="number">2</span>, <span class="number">3</span>)  <span class="comment"># 8</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：默认参数必须为不变对象，尽量避免使用列表、字典等可变类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#以下这个函数如果被多次调用会在默认添加多个END字符串</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_end</span><span class="params">(l = [])</span>:</span></span><br><span class="line">    l.append(<span class="string">'END'</span>)</span><br><span class="line">    <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、可变参数"><a href="#三、可变参数" class="headerlink" title="三、可变参数"></a>三、可变参数</h2><p>可变参数是指：定义一个形参来接受多个实参。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#传入一个列表，严格地说这不是可变参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(l)</span>:</span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> l:</span><br><span class="line">        sum += n</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calc([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这才是可变参数，虽然在使用上和列表没有区别，但是参数nums接收到的是一个tuple（这些参数在传入时被自动组组装为一个元祖）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(*nums)</span>:</span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">        sum += n</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calc(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="number">7</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calc(*my_ls)</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、关键字参数"><a href="#四、关键字参数" class="headerlink" title="四、关键字参数"></a>四、关键字参数</h2><p>关键字参数可变参数相似，但是它是字典类型的接受实参。</p>
+<p>但是它接受实参时，key和value是用=进行连接的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用两个星号表示关键字参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person_info</span><span class="params">(name, age, **kw)</span>:</span></span><br><span class="line">    print(<span class="string">"name"</span>, name, <span class="string">"age"</span>, age, <span class="string">"other"</span>, kw)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Xiaoming"</span>, <span class="number">12</span>)</span><br><span class="line">name Xiaoming age <span class="number">12</span> other&#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Dahuang"</span>, <span class="number">35</span>, city = <span class="string">"Beijing"</span>)</span><br><span class="line">name Dahuang age <span class="number">35</span> other &#123;<span class="string">'city'</span>:<span class="string">'Beijing'</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、命名关键字"><a href="#五、命名关键字" class="headerlink" title="五、命名关键字"></a>五、命名关键字</h2><p>使用命名关键字，可以使得该关键字后的形参对应的实参传入时，必须带上形参名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这里星号分割符后面的city、job是命名关键字参数</span></span><br><span class="line">person_info(name, age, *, city, job):</span><br><span class="line">    print(name, age, city, job)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Alex"</span>, <span class="number">17</span>, city = <span class="string">"Beijing"</span>, job = <span class="string">"Engineer"</span>)</span><br><span class="line">Alex <span class="number">17</span> Beijing Engineer    <span class="comment">#看来这里不再被自动组装为字典</span></span><br></pre></td></tr></table></figure>
+
+<p>不过也有例外，当我们在中间使用可变参数时，也能达到同样的效果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#args是变长参数，而city和job是命名关键字参数</span></span><br><span class="line">person_info(name, age, *args, city, job):</span><br><span class="line">    print(name, age, args, city)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Liqiang"</span>, <span class="number">43</span>, <span class="string">"balabala"</span>, city = <span class="string">"Wuhan"</span>, job = <span class="string">"Coder"</span>)</span><br><span class="line">Liqiang <span class="number">43</span> balabala Wuhan Coder</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、扩充"><a href="#六、扩充" class="headerlink" title="六、扩充"></a>六、扩充</h2><h3 id="6-1-Python-参数传递，有以下几点注意："><a href="#6-1-Python-参数传递，有以下几点注意：" class="headerlink" title="6.1 Python 参数传递，有以下几点注意："></a>6.1 Python 参数传递，有以下几点注意：</h3><ol>
+<li>Python函数参数实际中只是Python赋值的另一个实例而已**</li>
+<li>在函数内部的参数名的赋值不会影响调用者，他们的作用域只在该函数</li>
+<li>改变函数的可变对象参数的值也许会对调用者有影响</li>
+</ol>
+<h3 id="6-2-Python参数传递用C-C-来解释："><a href="#6-2-Python参数传递用C-C-来解释：" class="headerlink" title="6.2 Python参数传递用C/C++来解释："></a>6.2 Python参数传递用C/C++来解释：</h3><ol>
+<li>不可变参数通过“值”进行传递</li>
+<li>可变对象时通过“指针”进行传递</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" data-id="ckauneqtx0001aotu9krrgl67" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/31/global%E5%92%8Cnonlocal/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">global和nonlocal</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">Python传入参数的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/global%E5%92%8Cnonlocal/">global和nonlocal</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/">字典工具包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/">制作词频云图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

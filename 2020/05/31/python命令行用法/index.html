@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>python命令行用法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12tag: [工具, 命令行]categories: [Python, util]  命令行交互 在多个文件或者不同语言协同的项目中，Python 脚本经常需要从命令行直接读取参数，下面介绍两个实用的命令行解析包。  [TOC] 一、argv 操作 导包import sys 获取参数 sys.argv[index]  解释：  12345678import sys # python获取参数inp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python命令行用法">
+<meta property="og:url" content="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12tag: [工具, 命令行]categories: [Python, util]  命令行交互 在多个文件或者不同语言协同的项目中，Python 脚本经常需要从命令行直接读取参数，下面介绍两个实用的命令行解析包。  [TOC] 一、argv 操作 导包import sys 获取参数 sys.argv[index]  解释：  12345678import sys # python获取参数inp">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/images/552284-20190512173117764-1442908551.png">
+<meta property="article:published_time" content="2020-05-31T05:43:40.386Z">
+<meta property="article:modified_time" content="2020-05-31T05:51:55.470Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/images/552284-20190512173117764-1442908551.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python命令行用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.386Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python命令行用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 命令行]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+<h1 id="命令行交互"><a href="#命令行交互" class="headerlink" title="命令行交互"></a>命令行交互</h1><blockquote>
+<p>在多个文件或者不同语言协同的项目中，Python 脚本经常需要从命令行直接读取参数，下面介绍两个实用的命令行解析包。</p>
+</blockquote>
+<p>[TOC]</p>
+<h2 id="一、argv-操作"><a href="#一、argv-操作" class="headerlink" title="一、argv 操作"></a>一、argv 操作</h2><ol>
+<li>导包<code>import sys</code></li>
+<li>获取参数 <code>sys.argv[index]</code></li>
+</ol>
+<p><strong>解释</strong>：</p>
+<p><img src="images/552284-20190512173117764-1442908551.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="comment"># python获取参数</span></span><br><span class="line">input_file = sys.argv[<span class="number">1</span>]</span><br><span class="line">output_file = sys.argv[<span class="number">2</span>]</span><br><span class="line"> </span><br><span class="line">print(input_file)</span><br><span class="line">print(output_file)</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、argparse-操作"><a href="#二、argparse-操作" class="headerlink" title="二、argparse 操作"></a>二、argparse 操作</h2><ol>
+<li>导包<code>import argparse</code></li>
+<li>创建命令行解析对象 <code>parser = argparse.ArgumentParser(description=&quot;your script description&quot;)</code>；<code>description</code>用于描述该脚本的基本信息。</li>
+<li>添加命令行参数<code>parse.add_argument()</code>；向该对象中添加你要关注的行参数和选项。</li>
+<li><code>parser.parse_args()</code>；进行解析。</li>
+</ol>
+<h3 id="2-1-添加命令行参数"><a href="#2-1-添加命令行参数" class="headerlink" title="2.1 添加命令行参数"></a>2.1 添加命令行参数</h3><h4 id="2-1-1-位置参数-positional-arguments"><a href="#2-1-1-位置参数-positional-arguments" class="headerlink" title="2.1.1 位置参数 positional arguments"></a>2.1.1 位置参数 positional arguments</h4><p>直接添加参数名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"e"</span>)  <span class="comment"># 添加位置参数</span></span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print(args.e)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-2-可选参数-optional-arguments"><a href="#2-1-2-可选参数-optional-arguments" class="headerlink" title="2.1.2 可选参数 optional arguments"></a>2.1.2 可选参数 optional arguments</h4><p>可选参数有两种形式</p>
+<ul>
+<li><code>-</code>指定的短参数，如<code>-h</code></li>
+<li><code>--</code>指定的长参数，如<code>--help</code></li>
+</ul>
+<p>短参数是长参数的缩写，两者作用一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbosity"</span>, help=<span class="string">"添加输出 verbosity"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="keyword">if</span> args.verbosity:</span><br><span class="line">    print(<span class="string">"打开 verbosity"</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-3-类型-type"><a href="#2-1-3-类型-type" class="headerlink" title="2.1.3 类型 type"></a>2.1.3 类型 type</h4><p>默认的参数类型为 <code>str</code>，如果要进行数学计算，需要在参数进行解析后进行类型转换，如果不能转换则会报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">'x'</span>, type=int, help=<span class="string">"输入数字"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">y = args.x</span><br><span class="line">answer = y ** <span class="number">3</span> + y + <span class="number">1</span></span><br><span class="line">print(answer)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-4-可选值-choices"><a href="#2-1-4-可选值-choices" class="headerlink" title="2.1.4 可选值 choices=[]"></a>2.1.4 可选值 choices=[]</h4><p>如果我们要设置某个参数的取值范围，则调用choices</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"square"</span>, type=int,</span><br><span class="line">                    help=<span class="string">"display a square of a given number"</span>)</span><br><span class="line">parser.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbosity"</span>, type=int, choices=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">                    help=<span class="string">"increase output verbosity"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">answer = args.square**<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> args.verbosity == <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"the square of &#123;&#125; equals &#123;&#125;"</span>.format(args.square, answer))</span><br><span class="line"><span class="keyword">elif</span> args.verbosity == <span class="number">1</span>:</span><br><span class="line">    print(<span class="string">"&#123;&#125;^2 == &#123;&#125;"</span>.format(args.square, answer))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(answer)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-5-设置互斥参数-action"><a href="#2-1-5-设置互斥参数-action" class="headerlink" title="2.1.5 设置互斥参数 action"></a>2.1.5 设置互斥参数 action</h4><p>如果我们想让两个参数，只能同时存在一个，则我们可以设置他们的action，使之为互斥参数。</p>
+<p>action的可选值：store_true, store_false</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">group.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbose"</span>, action=<span class="string">"store_true"</span>)</span><br><span class="line">group.add_argument(<span class="string">"-q"</span>, <span class="string">"--quiet"</span>, action=<span class="string">"store_true"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>-v</code>、<code>-q</code>同时出现则会报错。</p>
+<h4 id="2-1-6-设置默认值"><a href="#2-1-6-设置默认值" class="headerlink" title="2.1.6 设置默认值"></a>2.1.6 设置默认值</h4><p>为参数设置默认值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">'--input-folder'</span>, default=<span class="string">'./data/'</span>,</span><br><span class="line">                        help=<span class="string">'name of the data folder (default: ./data)'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-7-设置参数名"><a href="#2-1-7-设置参数名" class="headerlink" title="2.1.7 设置参数名"></a>2.1.7 设置参数名</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">'--input-folder'</span>, dest=<span class="string">'input_path'</span>,</span><br><span class="line">                        help=<span class="string">'原调用方式input_folder 变成 args.input_path'</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/" data-id="ckauneqtz0002aotugaka5o5e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          系统操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/31/python%E5%A4%9A%E7%BA%BF%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python多线程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">Python传入参数的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/global%E5%92%8Cnonlocal/">global和nonlocal</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/">字典工具包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/">制作词频云图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

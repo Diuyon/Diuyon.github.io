@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>数据增强包Albumentation | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12tag: [数据增强, 工具]categories: [Python, util]  Albumentation 的使用[TOC]  安装: pip install albumentation 导入: import albumentation as A 参考: Albumentations数据增强方法 官方文档  使用12345678910111213141516171819202122232">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据增强包Albumentation">
+<meta property="og:url" content="http://yoursite.com/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12tag: [数据增强, 工具]categories: [Python, util]  Albumentation 的使用[TOC]  安装: pip install albumentation 导入: import albumentation as A 参考: Albumentations数据增强方法 官方文档  使用12345678910111213141516171819202122232">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-31T05:43:40.454Z">
+<meta property="article:modified_time" content="2020-05-31T05:48:54.210Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据增强包Albumentation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.454Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据增强包Albumentation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [数据增强, 工具]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Albumentation-的使用"><a href="#Albumentation-的使用" class="headerlink" title="Albumentation 的使用"></a>Albumentation 的使用</h1><p>[TOC]</p>
+<blockquote>
+<p>安装: <code>pip install albumentation</code></p>
+<p>导入: <code>import albumentation as A</code></p>
+<p>参考: <a href="https://blog.csdn.net/qq_27039891/article/details/100795846" target="_blank" rel="noopener">Albumentations数据增强方法</a></p>
+<p><a href="https://albumentations.readthedocs.io/en/latest/api/augmentations.html#module-albumentations.augmentations.functional" target="_blank" rel="noopener">官方文档</a></p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_training_augmentation</span><span class="params">()</span>:</span></span><br><span class="line">    train_transform = [</span><br><span class="line"></span><br><span class="line">        A.VerticalFlip(p=<span class="number">0.5</span>),  <span class="comment"># 水平翻转</span></span><br><span class="line">        A.GridDistortion(),  <span class="comment"># 将图片网格化，将随机几个网格放大或缩小</span></span><br><span class="line"></span><br><span class="line">        A.ShiftScaleRotate(scale_limit=<span class="number">0.6</span>, p=<span class="number">1</span>),  <span class="comment"># 将图片缩放旋转</span></span><br><span class="line">        A.IAAAdditiveGaussianNoise(p=<span class="number">0.2</span>),  <span class="comment"># 添加高斯噪音</span></span><br><span class="line">        A.IAAPerspective(p=<span class="number">0.5</span>),</span><br><span class="line"></span><br><span class="line">        A.OneOf(  <span class="comment"># 颜色转换</span></span><br><span class="line">            [</span><br><span class="line">                A.CLAHE(p=<span class="number">1</span>),</span><br><span class="line">                A.RandomBrightness(p=<span class="number">1</span>),</span><br><span class="line">                A.RandomGamma(p=<span class="number">1</span>),</span><br><span class="line">            ],</span><br><span class="line">            p=<span class="number">0.9</span>,</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        A.OneOf(  <span class="comment"># 模糊转换</span></span><br><span class="line">            [</span><br><span class="line">                A.IAASharpen(p=<span class="number">1</span>),</span><br><span class="line">                A.Blur(blur_limit=<span class="number">3</span>, p=<span class="number">1</span>),</span><br><span class="line">                A.MotionBlur(blur_limit=<span class="number">3</span>, p=<span class="number">1</span>),</span><br><span class="line">            ],</span><br><span class="line">            p=<span class="number">0.9</span>,</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        A.OneOf(  <span class="comment"># 对比度转换</span></span><br><span class="line">            [</span><br><span class="line">                A.RandomContrast(p=<span class="number">1</span>),</span><br><span class="line">                A.HueSaturationValue(p=<span class="number">1</span>),</span><br><span class="line">            ],</span><br><span class="line">            p=<span class="number">0.9</span>,</span><br><span class="line">        ),</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">return</span> A.Compose(train_transform)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">augmentation = get_training_augmentation()</span><br><span class="line">data = &#123;<span class="string">'image'</span>: train_image, <span class="string">'mask'</span>: origin_mask&#125;</span><br><span class="line">augmented = augmentation(**data)</span><br><span class="line">aug_image, aug_mask = augmented[<span class="string">'image'</span>], augmented[<span class="string">'mask'</span>]  <span class="comment"># 最后得到根据概率增强过的图片和对应的遮罩</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="操作总结"><a href="#操作总结" class="headerlink" title="操作总结"></a>操作总结</h2><h3 id="1-水平翻转"><a href="#1-水平翻转" class="headerlink" title="1. 水平翻转"></a>1. 水平翻转</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A.VerticalFlip(p=<span class="number">0.5</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">p: 应用该方法的概率</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-旋转缩放平移"><a href="#2-旋转缩放平移" class="headerlink" title="2. 旋转缩放平移"></a>2. 旋转缩放平移</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A.ShiftScaleRotate(scale_limit=<span class="number">0.5</span>, rotate_limit=<span class="number">0</span>, shift_limit=<span class="number">0.1</span>, p=<span class="number">1</span>, border_mode=<span class="number">0</span>)</span><br><span class="line"><span class="string">"""Randomly apply affine transforms: translate, scale and rotate the input.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        shift_limit ((float, float) or float): 宽高移位因子，如果为单个值则表示(-shift_limit, shift_limit). 值的范围在[0, 1]之间. Default: (-0.0625, 0.0625).</span></span><br><span class="line"><span class="string">        scale_limit ((float, float) or float): 缩放因子大小. Default: (-0.1, 0.1).</span></span><br><span class="line"><span class="string">        rotate_limit ((int, int) or int): 角度旋转范围, 默认[-45, 45].</span></span><br><span class="line"><span class="string">        interpolation (OpenCV flag): 插值补充形式.Default: cv2.INTER_LINEAR.</span></span><br><span class="line"><span class="string">        p: 应用该方法的概率.</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" data-id="ckaunequ50007aotubtk1824i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          性能测试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">生成器和迭代器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">Python传入参数的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/global%E5%92%8Cnonlocal/">global和nonlocal</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/">字典工具包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/">制作词频云图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

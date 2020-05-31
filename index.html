@@ -64,10 +64,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Python传入参数的几种方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/31/hello-world/" class="article-date">
-  <time datetime="2020-05-31T03:57:56.186Z" itemprop="datePublished">2020-05-31</time>
+    <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.523Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/31/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">Python传入参数的几种方法</a>
     </h1>
   
 
@@ -86,24 +86,546 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [传参, 底层]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="Python传入参数的几种方法"><a href="#Python传入参数的几种方法" class="headerlink" title="Python传入参数的几种方法"></a>Python传入参数的几种方法</h1><p>[TOC]</p>
+<h2 id="一、位置参数"><a href="#一、位置参数" class="headerlink" title="一、位置参数"></a>一、位置参数</h2><p>位置参数是最简单的传入参数的方式，在其它语言中也常常被使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br><span class="line">    </span><br><span class="line">func(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="二、默认参数"><a href="#二、默认参数" class="headerlink" title="二、默认参数"></a>二、默认参数</h2><p>默认参数是指在定义形参时，给他一个默认的值，当该形参未接收到实参时，使用该默认参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">power</span><span class="params">(x, n=<span class="number">2</span>)</span></span></span><br><span class="line">	s = 1</span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">        n -= <span class="number">1</span></span><br><span class="line">        s *= n</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line">power(<span class="number">3</span>)  <span class="comment"># 9</span></span><br><span class="line">power(<span class="number">2</span>, <span class="number">3</span>)  <span class="comment"># 8</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：默认参数必须为不变对象，尽量避免使用列表、字典等可变类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#以下这个函数如果被多次调用会在默认添加多个END字符串</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_end</span><span class="params">(l = [])</span>:</span></span><br><span class="line">    l.append(<span class="string">'END'</span>)</span><br><span class="line">    <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="三、可变参数"><a href="#三、可变参数" class="headerlink" title="三、可变参数"></a>三、可变参数</h2><p>可变参数是指：定义一个形参来接受多个实参。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#传入一个列表，严格地说这不是可变参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(l)</span>:</span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> l:</span><br><span class="line">        sum += n</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calc([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这才是可变参数，虽然在使用上和列表没有区别，但是参数nums接收到的是一个tuple（这些参数在传入时被自动组组装为一个元祖）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(*nums)</span>:</span></span><br><span class="line">    sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">        sum += n</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calc(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="number">7</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>calc(*my_ls)</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、关键字参数"><a href="#四、关键字参数" class="headerlink" title="四、关键字参数"></a>四、关键字参数</h2><p>关键字参数可变参数相似，但是它是字典类型的接受实参。</p>
+<p>但是它接受实参时，key和value是用=进行连接的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用两个星号表示关键字参数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">person_info</span><span class="params">(name, age, **kw)</span>:</span></span><br><span class="line">    print(<span class="string">"name"</span>, name, <span class="string">"age"</span>, age, <span class="string">"other"</span>, kw)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Xiaoming"</span>, <span class="number">12</span>)</span><br><span class="line">name Xiaoming age <span class="number">12</span> other&#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Dahuang"</span>, <span class="number">35</span>, city = <span class="string">"Beijing"</span>)</span><br><span class="line">name Dahuang age <span class="number">35</span> other &#123;<span class="string">'city'</span>:<span class="string">'Beijing'</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、命名关键字"><a href="#五、命名关键字" class="headerlink" title="五、命名关键字"></a>五、命名关键字</h2><p>使用命名关键字，可以使得该关键字后的形参对应的实参传入时，必须带上形参名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这里星号分割符后面的city、job是命名关键字参数</span></span><br><span class="line">person_info(name, age, *, city, job):</span><br><span class="line">    print(name, age, city, job)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Alex"</span>, <span class="number">17</span>, city = <span class="string">"Beijing"</span>, job = <span class="string">"Engineer"</span>)</span><br><span class="line">Alex <span class="number">17</span> Beijing Engineer    <span class="comment">#看来这里不再被自动组装为字典</span></span><br></pre></td></tr></table></figure>
+
+<p>不过也有例外，当我们在中间使用可变参数时，也能达到同样的效果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#args是变长参数，而city和job是命名关键字参数</span></span><br><span class="line">person_info(name, age, *args, city, job):</span><br><span class="line">    print(name, age, args, city)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person_info(<span class="string">"Liqiang"</span>, <span class="number">43</span>, <span class="string">"balabala"</span>, city = <span class="string">"Wuhan"</span>, job = <span class="string">"Coder"</span>)</span><br><span class="line">Liqiang <span class="number">43</span> balabala Wuhan Coder</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、扩充"><a href="#六、扩充" class="headerlink" title="六、扩充"></a>六、扩充</h2><h3 id="6-1-Python-参数传递，有以下几点注意："><a href="#6-1-Python-参数传递，有以下几点注意：" class="headerlink" title="6.1 Python 参数传递，有以下几点注意："></a>6.1 Python 参数传递，有以下几点注意：</h3><ol>
+<li>Python函数参数实际中只是Python赋值的另一个实例而已**</li>
+<li>在函数内部的参数名的赋值不会影响调用者，他们的作用域只在该函数</li>
+<li>改变函数的可变对象参数的值也许会对调用者有影响</li>
+</ol>
+<h3 id="6-2-Python参数传递用C-C-来解释："><a href="#6-2-Python参数传递用C-C-来解释：" class="headerlink" title="6.2 Python参数传递用C/C++来解释："></a>6.2 Python参数传递用C/C++来解释：</h3><ol>
+<li>不可变参数通过“值”进行传递</li>
+<li>可变对象时通过“指针”进行传递</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/hello-world/" data-id="ckaumzurs0000r4tu95ja9qqd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" data-id="ckauneqtx0001aotu9krrgl67" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-global和nonlocal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/global%E5%92%8Cnonlocal/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.515Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/global%E5%92%8Cnonlocal/">global和nonlocal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [全局变量]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
+
+<h1 id="global-和-nonlocal-的区别"><a href="#global-和-nonlocal-的区别" class="headerlink" title="global 和 nonlocal 的区别"></a>global 和 nonlocal 的区别</h1><h2 id="global"><a href="#global" class="headerlink" title="global"></a>global</h2><p>这个是经常使用的，当内部函数需要修改外部变量时使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">aa</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> a &gt; <span class="number">1</span>:</span><br><span class="line">        print(<span class="string">"yes"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"no"</span>)</span><br><span class="line">        a = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="nonlocal"><a href="#nonlocal" class="headerlink" title="nonlocal"></a>nonlocal</h2><p>这个使用情况是当函数为递归调用的函数时，访问外部变量时使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">aa</span><span class="params">()</span>:</span></span><br><span class="line">    s = <span class="string">""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bb</span><span class="params">(n)</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> s</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        s += <span class="string">"c"</span></span><br><span class="line">        print(s)</span><br><span class="line"></span><br><span class="line">        bb(n<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">    bb(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">aa()</span><br></pre></td></tr></table></figure>
+
+<p>这里如果将 <code>nonlocal</code> 改成 <code>global</code> 时，会报错说 s 未定义，原因是因为在第一次递归之后的函数 <code>bb</code> 在寻找变量 s 时是在外层的 <code>bb</code> 中寻找，而外层的函数 <code>bb</code> 中的 s 是借用的 <code>aa</code> 的，并不是自己的，所以才报此错误。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/global%E5%92%8Cnonlocal/" data-id="ckauneqtr0000aotu2zxsa0cv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-字典工具包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.493Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/">字典工具包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 字典]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="collections-工具包"><a href="#collections-工具包" class="headerlink" title="collections 工具包"></a>collections 工具包</h1><p>[TOC]</p>
+<h2 id="一、defaultdict"><a href="#一、defaultdict" class="headerlink" title="一、defaultdict()"></a>一、defaultdict()</h2><p>创建一个可以设置初始类型或者初始值的字典。</p>
+<h3 id="1-1-创建初始类型字典"><a href="#1-1-创建初始类型字典" class="headerlink" title="1.1 创建初始类型字典"></a>1.1 创建初始类型字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line">a = defaultdict(list)</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]:</span><br><span class="line">        a[key].append(value)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-创建初始值类型字典"><a href="#1-2-创建初始值类型字典" class="headerlink" title="1.2 创建初始值类型字典"></a>1.2 创建初始值类型字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line">b = defaultdict(<span class="keyword">lambda</span>: <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二、OrdereDict"><a href="#二、OrdereDict" class="headerlink" title="二、OrdereDict()"></a>二、OrdereDict()</h2><p>有序字典，在往字典里添加键值对时，字典会自动维护加入时的顺序，在使用keys(), values(), items()方法时很有用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># python有序字典需导入模块collections</span></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="comment"># 通过OrderedDict类创建的字典是有序的</span></span><br><span class="line">dic = collections.OrderedDict()</span><br><span class="line">dic[<span class="string">'k1'</span>] = <span class="string">'v1'</span></span><br><span class="line">dic[<span class="string">'k2'</span>] = <span class="string">'v2'</span></span><br><span class="line">dic[<span class="string">'k3'</span>] = <span class="string">'v3'</span></span><br><span class="line"><span class="keyword">print</span>（dic)</span><br><span class="line"> </span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">    类似通过列表的方式来实现字典有序</span></span><br><span class="line"><span class="string">    创建列表,添加列表元素k1时,再将k1作为字典的键，</span></span><br><span class="line"><span class="string">    因为列表是序的，所以遍历列表就可有序的遍历出字典所有的key</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">dic = &#123;<span class="string">'K1'</span>: <span class="string">'V1'</span>, <span class="string">'K2'</span>: <span class="string">'V2'</span>, <span class="string">'K3'</span>: <span class="string">'V3'</span>&#125;</span><br><span class="line">li = [<span class="string">'k1'</span>, <span class="string">'k2'</span>, <span class="string">'k3'</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Counter"><a href="#三、Counter" class="headerlink" title="三、Counter()"></a>三、Counter()</h2><p>该类型字典能自动帮忙计数，不同的是，它只能用来计数，所以传入值不像普通字典用<strong>键值对</strong>，而是列表或者集合。</p>
+<h3 id="3-1-创建"><a href="#3-1-创建" class="headerlink" title="3.1 创建"></a>3.1 创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">obj = collections.Counter(<span class="string">'aabbccc'</span>)</span><br><span class="line">print(obj)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：Counter(&#123;'c': 3, 'a': 2, 'b': 2&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-把键输出，按照其对应值的个数，elements"><a href="#3-2-把键输出，按照其对应值的个数，elements" class="headerlink" title="3.2 把键输出，按照其对应值的个数，elements()"></a>3.2 把键输出，按照其对应值的个数，elements()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">obj = collections.Counter(<span class="string">'aabbccc'</span>)</span><br><span class="line">print(sorted(obj.elements()))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：['a', 'a', 'b', 'b', 'c', 'c', 'c']</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> obj.elements():   <span class="comment">#遍历打印obj所有元素</span></span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-从大到小输出计数对，most-common"><a href="#3-3-从大到小输出计数对，most-common" class="headerlink" title="3.3 从大到小输出计数对，most_common()"></a>3.3 从大到小输出计数对，most_common()</h3><p>计数对形式：[(key, count), …]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">obj = collections.Counter(<span class="string">'aabbbcccc'</span>)</span><br><span class="line"><span class="comment"># print(0bj.most_common())  # 输出所有</span></span><br><span class="line">print(obj.most_common(<span class="number">2</span>))  <span class="comment"># 输出前两个</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：[('c', 4), ('b', 3)]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-输出未排序的计数对，-items"><a href="#3-4-输出未排序的计数对，-items" class="headerlink" title="3.4 输出未排序的计数对， items()"></a>3.4 输出未排序的计数对， items()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">obj = collections.Counter(<span class="string">'aabbbcccc'</span>)</span><br><span class="line">print(obj.items())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> obj.items():</span><br><span class="line">    print(k,v)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：dict_items([('b', 3), ('c', 4), ('a', 2)])</span></span><br><span class="line"><span class="comment">#     b 3</span></span><br><span class="line"><span class="comment">#     c 4</span></span><br><span class="line"><span class="comment">#     a 2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-增加元素-update"><a href="#3-5-增加元素-update" class="headerlink" title="3.5 增加元素, update()"></a>3.5 增加元素, update()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">obj = collections.Counter([<span class="string">'11'</span>,<span class="string">'22'</span>])</span><br><span class="line">obj.update([<span class="string">'22'</span>,<span class="string">'55'</span>])</span><br><span class="line">print(obj)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：Counter(&#123;'22': 2, '11': 1, '55': 1&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-删除元素，subtract"><a href="#3-6-删除元素，subtract" class="headerlink" title="3.6 删除元素，subtract()"></a>3.6 删除元素，subtract()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">obj = collections.Counter([<span class="string">'11'</span>,<span class="string">'22'</span>,<span class="string">'33'</span>])</span><br><span class="line">obj.subtract([<span class="string">'22'</span>,<span class="string">'55'</span>])</span><br><span class="line">print(obj)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：Counter(&#123;'11': 1, '33': 1, '22': 0, '55': -1&#125;)</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/" data-id="ckaunequ20005aotu8heh909w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-装饰器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.489Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [装饰器]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
+
+<h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><h2 id="一、装饰器的作用"><a href="#一、装饰器的作用" class="headerlink" title="一、装饰器的作用"></a>一、装饰器的作用</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/" data-id="ckaunequn000aaotudi2q0pfr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-制作词频云图" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.460Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/">制作词频云图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 词频云图]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+<h1 id="python-制作词频云图"><a href="#python-制作词频云图" class="headerlink" title="python 制作词频云图"></a>python 制作词频云图</h1><p>[TOC] </p>
+<h2 id="一、包下载"><a href="#一、包下载" class="headerlink" title="一、包下载"></a>一、包下载</h2><p><code>pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
+<h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wordcloud = WordCloud( </span><br><span class="line">    background_color=<span class="string">'white'</span>, <span class="comment"># 设置背景颜色 #mask=backgroud_Image, # 设置背景图片        font_path='simhei.ttf', # 若是有中文的话，这句代码必须添加，不然会出现方框，不出现汉字 </span></span><br><span class="line">    max_words=<span class="number">2000</span>, <span class="comment"># 设置最大现实的字数 #stopwords=STOPWORDS, # 设置停用词 max_font_size=150, # 设置字体最大值 </span></span><br><span class="line">    random_state=<span class="number">30</span> <span class="comment"># 设置有多少种随机生成状态，即有多少种配色方案 ) </span></span><br><span class="line">wordcloud.generate_from_text(text)  <span class="comment"># text 为jieba分好的词汇再用空格进行连接而成的字符串</span></span><br><span class="line">plt.imshow(wordcloud) plt.show()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" data-id="ckaunequ10004aotufoei3o42" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-性能测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.458Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 测试, 性能]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" data-id="ckaunequ40006aotu87w54113" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数据增强包Albumentation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.454Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/">数据增强包Albumentation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [数据增强, 工具]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Albumentation-的使用"><a href="#Albumentation-的使用" class="headerlink" title="Albumentation 的使用"></a>Albumentation 的使用</h1><p>[TOC]</p>
+<blockquote>
+<p>安装: <code>pip install albumentation</code></p>
+<p>导入: <code>import albumentation as A</code></p>
+<p>参考: <a href="https://blog.csdn.net/qq_27039891/article/details/100795846" target="_blank" rel="noopener">Albumentations数据增强方法</a></p>
+<p><a href="https://albumentations.readthedocs.io/en/latest/api/augmentations.html#module-albumentations.augmentations.functional" target="_blank" rel="noopener">官方文档</a></p>
+</blockquote>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_training_augmentation</span><span class="params">()</span>:</span></span><br><span class="line">    train_transform = [</span><br><span class="line"></span><br><span class="line">        A.VerticalFlip(p=<span class="number">0.5</span>),  <span class="comment"># 水平翻转</span></span><br><span class="line">        A.GridDistortion(),  <span class="comment"># 将图片网格化，将随机几个网格放大或缩小</span></span><br><span class="line"></span><br><span class="line">        A.ShiftScaleRotate(scale_limit=<span class="number">0.6</span>, p=<span class="number">1</span>),  <span class="comment"># 将图片缩放旋转</span></span><br><span class="line">        A.IAAAdditiveGaussianNoise(p=<span class="number">0.2</span>),  <span class="comment"># 添加高斯噪音</span></span><br><span class="line">        A.IAAPerspective(p=<span class="number">0.5</span>),</span><br><span class="line"></span><br><span class="line">        A.OneOf(  <span class="comment"># 颜色转换</span></span><br><span class="line">            [</span><br><span class="line">                A.CLAHE(p=<span class="number">1</span>),</span><br><span class="line">                A.RandomBrightness(p=<span class="number">1</span>),</span><br><span class="line">                A.RandomGamma(p=<span class="number">1</span>),</span><br><span class="line">            ],</span><br><span class="line">            p=<span class="number">0.9</span>,</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        A.OneOf(  <span class="comment"># 模糊转换</span></span><br><span class="line">            [</span><br><span class="line">                A.IAASharpen(p=<span class="number">1</span>),</span><br><span class="line">                A.Blur(blur_limit=<span class="number">3</span>, p=<span class="number">1</span>),</span><br><span class="line">                A.MotionBlur(blur_limit=<span class="number">3</span>, p=<span class="number">1</span>),</span><br><span class="line">            ],</span><br><span class="line">            p=<span class="number">0.9</span>,</span><br><span class="line">        ),</span><br><span class="line"></span><br><span class="line">        A.OneOf(  <span class="comment"># 对比度转换</span></span><br><span class="line">            [</span><br><span class="line">                A.RandomContrast(p=<span class="number">1</span>),</span><br><span class="line">                A.HueSaturationValue(p=<span class="number">1</span>),</span><br><span class="line">            ],</span><br><span class="line">            p=<span class="number">0.9</span>,</span><br><span class="line">        ),</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">return</span> A.Compose(train_transform)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">augmentation = get_training_augmentation()</span><br><span class="line">data = &#123;<span class="string">'image'</span>: train_image, <span class="string">'mask'</span>: origin_mask&#125;</span><br><span class="line">augmented = augmentation(**data)</span><br><span class="line">aug_image, aug_mask = augmented[<span class="string">'image'</span>], augmented[<span class="string">'mask'</span>]  <span class="comment"># 最后得到根据概率增强过的图片和对应的遮罩</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="操作总结"><a href="#操作总结" class="headerlink" title="操作总结"></a>操作总结</h2><h3 id="1-水平翻转"><a href="#1-水平翻转" class="headerlink" title="1. 水平翻转"></a>1. 水平翻转</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A.VerticalFlip(p=<span class="number">0.5</span>)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">p: 应用该方法的概率</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-旋转缩放平移"><a href="#2-旋转缩放平移" class="headerlink" title="2. 旋转缩放平移"></a>2. 旋转缩放平移</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A.ShiftScaleRotate(scale_limit=<span class="number">0.5</span>, rotate_limit=<span class="number">0</span>, shift_limit=<span class="number">0.1</span>, p=<span class="number">1</span>, border_mode=<span class="number">0</span>)</span><br><span class="line"><span class="string">"""Randomly apply affine transforms: translate, scale and rotate the input.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        shift_limit ((float, float) or float): 宽高移位因子，如果为单个值则表示(-shift_limit, shift_limit). 值的范围在[0, 1]之间. Default: (-0.0625, 0.0625).</span></span><br><span class="line"><span class="string">        scale_limit ((float, float) or float): 缩放因子大小. Default: (-0.1, 0.1).</span></span><br><span class="line"><span class="string">        rotate_limit ((int, int) or int): 角度旋转范围, 默认[-45, 45].</span></span><br><span class="line"><span class="string">        interpolation (OpenCV flag): 插值补充形式.Default: cv2.INTER_LINEAR.</span></span><br><span class="line"><span class="string">        p: 应用该方法的概率.</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" data-id="ckaunequ50007aotubtk1824i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-生成器和迭代器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.417Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/">生成器和迭代器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [生成器, 迭代器]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
+
+<h1 id="生成器和迭代器"><a href="#生成器和迭代器" class="headerlink" title="生成器和迭代器"></a>生成器和迭代器</h1><p>[TOC]</p>
+<h2 id="一、生成器"><a href="#一、生成器" class="headerlink" title="一、生成器"></a>一、生成器</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><p> 如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间，在Python中，这种一边循环一边计算的机制，称为生成器：generator 。</p>
+<p> 生成器是一个特殊的程序，可以被用作控制循环的迭代行为，python中生成器是迭代器的一种，使用yield返回值函数，每次调用yield会暂停，而可以使用next()函数和send()函数恢复生成器。 </p>
+<h3 id="1-2-创建"><a href="#1-2-创建" class="headerlink" title="1.2 创建"></a>1.2 创建</h3><h4 id="1-2-1-生成器表达式"><a href="#1-2-1-生成器表达式" class="headerlink" title="1.2.1 生成器表达式"></a>1.2.1 生成器表达式</h4><p> 要创建一个generator，有很多种方法，第一种方法很简单，<strong>只有把一个列表生成式的[]中括号改为（）小括号，就创建一个generator</strong> </p>
+<p><code>(x for x in range(10))</code></p>
+<h4 id="1-2-2-生成器函数"><a href="#1-2-2-生成器函数" class="headerlink" title="1.2.2 生成器函数"></a>1.2.2 生成器函数</h4><p>使用 yiled 进行返回，该函数就成为了一个生成器函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数有了yield之后，函数名+（）就变成了生成器</span></span><br><span class="line"><span class="comment"># return在生成器中代表生成器的中止，直接报错</span></span><br><span class="line"><span class="comment"># next的作用是唤醒并继续执行</span></span><br><span class="line"><span class="comment"># send的作用是唤醒并继续执行，发送一个信息到生成器内部</span></span><br><span class="line"><span class="string">'''生成器'''</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_counter</span><span class="params">(n)</span>:</span></span><br><span class="line">    print(<span class="string">"create_counter"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">yield</span> n</span><br><span class="line">        print(<span class="string">"increment n"</span>)</span><br><span class="line">        n +=<span class="number">1</span></span><br><span class="line"> </span><br><span class="line">gen = create_counter(<span class="number">2</span>)</span><br><span class="line">print(gen)</span><br><span class="line">print(next(gen))</span><br><span class="line">print(next(gen))</span><br><span class="line"> </span><br><span class="line">结果：</span><br><span class="line">&lt;generator object create_counter at <span class="number">0x0000023A1694A938</span>&gt;</span><br><span class="line">create_counter</span><br><span class="line"><span class="number">2</span></span><br><span class="line">increment n</span><br><span class="line"><span class="number">3</span></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-使用"><a href="#1-3-使用" class="headerlink" title="1.3 使用"></a>1.3 使用</h3><ol>
+<li>我们可以使用next()来进行，生成器的下一次输出。next()每次只返回一个结果，知道出现 <code>StopIteration</code>异常就结束。</li>
+<li>也可以使用for循环对生成器进行迭代，for循环会自动捕捉<code>StopIteration</code>，然后结束循环。</li>
+<li>我们可以使用send()函数提前代替yield返回，并且填入我们需要返回的值，达到一种修改函数规则的作用。</li>
+</ol>
+<h3 id="1-4-生成器的优缺点"><a href="#1-4-生成器的优缺点" class="headerlink" title="1.4 生成器的优缺点"></a>1.4 生成器的优缺点</h3><p><strong>优点</strong>：</p>
+<ol>
+<li>不需要占用大量内部，生成器的思想就是，在我们需要得到下一个值时，只需要运行我们存储的函数表达式和上一次运行结果，及时算出下一次结果，不像普通的列表，都将其存入内存。</li>
+<li>能回溯到上一次返回结果的位置，继续往下运行</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>不能知道整体的大小</li>
+</ol>
+<h2 id="二、迭代器（Iterator）"><a href="#二、迭代器（Iterator）" class="headerlink" title="二、迭代器（Iterator）"></a>二、迭代器（Iterator）</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>凡是可以使用next()进行下一次的数据读取的对象，都是一个迭代器。并且也不能用len()进行长度的计算。</p>
+<p><strong>生成器是一个特殊的迭代器，因为它还能使用yield方法，对函数进行操作。</strong></p>
+<h3 id="2-2-创建一个迭代器"><a href="#2-2-创建一个迭代器" class="headerlink" title="2.2 创建一个迭代器"></a>2.2 创建一个迭代器</h3><p>任何可迭代对象都可以被转化为迭代器，只需用iter()对其进行一个类型转换，例如：<code>iter(range(10))</code></p>
+<h2 id="三、可迭代对象（Iterable）"><a href="#三、可迭代对象（Iterable）" class="headerlink" title="三、可迭代对象（Iterable）"></a>三、可迭代对象（Iterable）</h2><h3 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h3><p>任何可被for循环迭代的对象，都是可迭代对象。</p>
+<h3 id="3-2-注意"><a href="#3-2-注意" class="headerlink" title="3.2 注意"></a>3.2 注意</h3><p>list, dict, str, set, range都为可迭代对象，但它们都不是迭代器。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" data-id="ckaunequ60008aotu7wh28aft" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-系统操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.407Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/">系统操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [系统操作, 文件, 路径]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
+
+<h1 id="系统操作"><a href="#系统操作" class="headerlink" title="系统操作"></a>系统操作</h1><p>[TOC]</p>
+<h2 id="一、文件"><a href="#一、文件" class="headerlink" title="一、文件"></a>一、文件</h2><ol>
+<li>创建文件（夹）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">os.makedirs(path)</span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line"><span class="keyword">with</span> open(path, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>判断当前文件是否存在<code>os.path.exists(path)</code></p>
+</li>
+<li><p>删除当前文件<code>os.remove(path)</code></p>
+</li>
+<li><p>获取当前文件大小<code>fsize = os.path.getsize(path)</code>, fsize 为int类型</p>
+</li>
+</ol>
+<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><ol>
+<li>获取当前运行位置<code>os.getcwd()</code></li>
+<li>获取当前文件的位置<code>os.path.realpath(__file__)</code></li>
+<li>切换当前执行目录<code>os.chdir(path)</code></li>
+<li>去除路径的文件名，获取其路径<code>os.path.dirnae(path)</code></li>
+<li>去除目录的文件名，获取其文件名<code>os.path.basename(path)</code></li>
+</ol>
+<h2 id="三、执行cmd命令"><a href="#三、执行cmd命令" class="headerlink" title="三、执行cmd命令"></a>三、执行cmd命令</h2><ol>
+<li><code>os.system(cmd)</code></li>
+</ol>
+<h2 id="四、切割路径"><a href="#四、切割路径" class="headerlink" title="四、切割路径"></a>四、切割路径</h2><ol>
+<li>切割出当期目录和文件名：<code>os.path.split(file_path)</code>，返回列表<code>[当期目录, 文件名]</code></li>
+<li>将当期路径后缀与文件分隔：<code>os.path.splitext(file_path)</code>，返回列表<code>[不包括后缀的路径, 后缀]</code></li>
+</ol>
+<h2 id="五、其他"><a href="#五、其他" class="headerlink" title="五、其他"></a>五、其他</h2><ol>
+<li>获取不同系统下的斜杠符 <code>os.sep</code></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" data-id="ckaunequ70009aotue0hy3uqm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python命令行用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/" class="article-date">
+  <time datetime="2020-05-31T05:43:40.386Z" itemprop="datePublished">2020-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/">python命令行用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 命令行]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
+
+<h1 id="命令行交互"><a href="#命令行交互" class="headerlink" title="命令行交互"></a>命令行交互</h1><blockquote>
+<p>在多个文件或者不同语言协同的项目中，Python 脚本经常需要从命令行直接读取参数，下面介绍两个实用的命令行解析包。</p>
+</blockquote>
+<p>[TOC]</p>
+<h2 id="一、argv-操作"><a href="#一、argv-操作" class="headerlink" title="一、argv 操作"></a>一、argv 操作</h2><ol>
+<li>导包<code>import sys</code></li>
+<li>获取参数 <code>sys.argv[index]</code></li>
+</ol>
+<p><strong>解释</strong>：</p>
+<p><img src="images/552284-20190512173117764-1442908551.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="comment"># python获取参数</span></span><br><span class="line">input_file = sys.argv[<span class="number">1</span>]</span><br><span class="line">output_file = sys.argv[<span class="number">2</span>]</span><br><span class="line"> </span><br><span class="line">print(input_file)</span><br><span class="line">print(output_file)</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、argparse-操作"><a href="#二、argparse-操作" class="headerlink" title="二、argparse 操作"></a>二、argparse 操作</h2><ol>
+<li>导包<code>import argparse</code></li>
+<li>创建命令行解析对象 <code>parser = argparse.ArgumentParser(description=&quot;your script description&quot;)</code>；<code>description</code>用于描述该脚本的基本信息。</li>
+<li>添加命令行参数<code>parse.add_argument()</code>；向该对象中添加你要关注的行参数和选项。</li>
+<li><code>parser.parse_args()</code>；进行解析。</li>
+</ol>
+<h3 id="2-1-添加命令行参数"><a href="#2-1-添加命令行参数" class="headerlink" title="2.1 添加命令行参数"></a>2.1 添加命令行参数</h3><h4 id="2-1-1-位置参数-positional-arguments"><a href="#2-1-1-位置参数-positional-arguments" class="headerlink" title="2.1.1 位置参数 positional arguments"></a>2.1.1 位置参数 positional arguments</h4><p>直接添加参数名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"e"</span>)  <span class="comment"># 添加位置参数</span></span><br><span class="line">args = parser.parse_args()</span><br><span class="line">print(args.e)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-2-可选参数-optional-arguments"><a href="#2-1-2-可选参数-optional-arguments" class="headerlink" title="2.1.2 可选参数 optional arguments"></a>2.1.2 可选参数 optional arguments</h4><p>可选参数有两种形式</p>
+<ul>
+<li><code>-</code>指定的短参数，如<code>-h</code></li>
+<li><code>--</code>指定的长参数，如<code>--help</code></li>
+</ul>
+<p>短参数是长参数的缩写，两者作用一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbosity"</span>, help=<span class="string">"添加输出 verbosity"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="keyword">if</span> args.verbosity:</span><br><span class="line">    print(<span class="string">"打开 verbosity"</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-3-类型-type"><a href="#2-1-3-类型-type" class="headerlink" title="2.1.3 类型 type"></a>2.1.3 类型 type</h4><p>默认的参数类型为 <code>str</code>，如果要进行数学计算，需要在参数进行解析后进行类型转换，如果不能转换则会报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">'x'</span>, type=int, help=<span class="string">"输入数字"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">y = args.x</span><br><span class="line">answer = y ** <span class="number">3</span> + y + <span class="number">1</span></span><br><span class="line">print(answer)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-4-可选值-choices"><a href="#2-1-4-可选值-choices" class="headerlink" title="2.1.4 可选值 choices=[]"></a>2.1.4 可选值 choices=[]</h4><p>如果我们要设置某个参数的取值范围，则调用choices</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">"square"</span>, type=int,</span><br><span class="line">                    help=<span class="string">"display a square of a given number"</span>)</span><br><span class="line">parser.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbosity"</span>, type=int, choices=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">                    help=<span class="string">"increase output verbosity"</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">answer = args.square**<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> args.verbosity == <span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"the square of &#123;&#125; equals &#123;&#125;"</span>.format(args.square, answer))</span><br><span class="line"><span class="keyword">elif</span> args.verbosity == <span class="number">1</span>:</span><br><span class="line">    print(<span class="string">"&#123;&#125;^2 == &#123;&#125;"</span>.format(args.square, answer))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(answer)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-5-设置互斥参数-action"><a href="#2-1-5-设置互斥参数-action" class="headerlink" title="2.1.5 设置互斥参数 action"></a>2.1.5 设置互斥参数 action</h4><p>如果我们想让两个参数，只能同时存在一个，则我们可以设置他们的action，使之为互斥参数。</p>
+<p>action的可选值：store_true, store_false</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">group.add_argument(<span class="string">"-v"</span>, <span class="string">"--verbose"</span>, action=<span class="string">"store_true"</span>)</span><br><span class="line">group.add_argument(<span class="string">"-q"</span>, <span class="string">"--quiet"</span>, action=<span class="string">"store_true"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>-v</code>、<code>-q</code>同时出现则会报错。</p>
+<h4 id="2-1-6-设置默认值"><a href="#2-1-6-设置默认值" class="headerlink" title="2.1.6 设置默认值"></a>2.1.6 设置默认值</h4><p>为参数设置默认值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">'--input-folder'</span>, default=<span class="string">'./data/'</span>,</span><br><span class="line">                        help=<span class="string">'name of the data folder (default: ./data)'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-7-设置参数名"><a href="#2-1-7-设置参数名" class="headerlink" title="2.1.7 设置参数名"></a>2.1.7 设置参数名</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_argument(<span class="string">'--input-folder'</span>, dest=<span class="string">'input_path'</span>,</span><br><span class="line">                        help=<span class="string">'原调用方式input_folder 变成 args.input_path'</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/" data-id="ckauneqtz0002aotugaka5o5e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,6 +636,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -144,7 +671,23 @@
       <ul>
         
           <li>
-            <a href="/2020/05/31/hello-world/">Hello World</a>
+            <a href="/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">Python传入参数的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/global%E5%92%8Cnonlocal/">global和nonlocal</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/">字典工具包</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/">装饰器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/">制作词频云图</a>
           </li>
         
       </ul>
