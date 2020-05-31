@@ -70,6 +70,10 @@
   <time datetime="2020-05-31T05:43:40.523Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/base/">base</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -86,9 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [传参, 底层]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
-
-<h1 id="Python传入参数的几种方法"><a href="#Python传入参数的几种方法" class="headerlink" title="Python传入参数的几种方法"></a>Python传入参数的几种方法</h1><p>[TOC]</p>
+        <h1 id="Python传入参数的几种方法"><a href="#Python传入参数的几种方法" class="headerlink" title="Python传入参数的几种方法"></a>Python传入参数的几种方法</h1><p>[TOC]</p>
 <h2 id="一、位置参数"><a href="#一、位置参数" class="headerlink" title="一、位置参数"></a>一、位置参数</h2><p>位置参数是最简单的传入参数的方式，在其它语言中也常常被使用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br><span class="line">    </span><br><span class="line">func(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
 
@@ -126,9 +128,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" data-id="ckauneqtx0001aotu9krrgl67" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/Python%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" data-id="ckaunz1b0000170tuax5y6j68" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BC%A0%E5%8F%82/" rel="tag">传参</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BA%95%E5%B1%82/" rel="tag">底层</a></li></ul>
+
     </footer>
   </div>
   
@@ -142,6 +146,10 @@
   <time datetime="2020-05-31T05:43:40.515Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/base/">base</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -158,9 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [全局变量]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
-
-<h1 id="global-和-nonlocal-的区别"><a href="#global-和-nonlocal-的区别" class="headerlink" title="global 和 nonlocal 的区别"></a>global 和 nonlocal 的区别</h1><h2 id="global"><a href="#global" class="headerlink" title="global"></a>global</h2><p>这个是经常使用的，当内部函数需要修改外部变量时使用。</p>
+        <h1 id="global-和-nonlocal-的区别"><a href="#global-和-nonlocal-的区别" class="headerlink" title="global 和 nonlocal 的区别"></a>global 和 nonlocal 的区别</h1><h2 id="global"><a href="#global" class="headerlink" title="global"></a>global</h2><p>这个是经常使用的，当内部函数需要修改外部变量时使用。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">aa</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> a &gt; <span class="number">1</span>:</span><br><span class="line">        print(<span class="string">"yes"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"no"</span>)</span><br><span class="line">        a = <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 
@@ -173,9 +179,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/global%E5%92%8Cnonlocal/" data-id="ckauneqtr0000aotu2zxsa0cv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/global%E5%92%8Cnonlocal/" data-id="ckaunz1at000070tu6p356vs8" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" rel="tag">全局变量</a></li></ul>
+
     </footer>
   </div>
   
@@ -189,6 +197,10 @@
   <time datetime="2020-05-31T05:43:40.493Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/util/">util</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -205,10 +217,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 字典]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="collections-工具包"><a href="#collections-工具包" class="headerlink" title="collections 工具包"></a>collections 工具包</h1><p>[TOC]</p>
+        <h1 id="collections-工具包"><a href="#collections-工具包" class="headerlink" title="collections 工具包"></a>collections 工具包</h1><p>[TOC]</p>
 <h2 id="一、defaultdict"><a href="#一、defaultdict" class="headerlink" title="一、defaultdict()"></a>一、defaultdict()</h2><p>创建一个可以设置初始类型或者初始值的字典。</p>
 <h3 id="1-1-创建初始类型字典"><a href="#1-1-创建初始类型字典" class="headerlink" title="1.1 创建初始类型字典"></a>1.1 创建初始类型字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line">a = defaultdict(list)</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]:</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]:</span><br><span class="line">        a[key].append(value)</span><br></pre></td></tr></table></figure>
 
@@ -237,9 +246,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/" data-id="ckaunequ20005aotu8heh909w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E5%AD%97%E5%85%B8%E5%B7%A5%E5%85%B7%E5%8C%85/" data-id="ckaunz1b7000670tu7p4z8h21" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E5%85%B8/" rel="tag">字典</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
+
     </footer>
   </div>
   
@@ -253,6 +264,10 @@
   <time datetime="2020-05-31T05:43:40.489Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/base/">base</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -269,15 +284,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [装饰器]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
-
-<h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><h2 id="一、装饰器的作用"><a href="#一、装饰器的作用" class="headerlink" title="一、装饰器的作用"></a>一、装饰器的作用</h2>
+        <h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><h2 id="一、装饰器的作用"><a href="#一、装饰器的作用" class="headerlink" title="一、装饰器的作用"></a>一、装饰器的作用</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/" data-id="ckaunequn000aaotudi2q0pfr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E8%A3%85%E9%A5%B0%E5%99%A8/" data-id="ckaunz1ce002a70tuh4lu438y" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/" rel="tag">装饰器</a></li></ul>
+
     </footer>
   </div>
   
@@ -291,6 +306,10 @@
   <time datetime="2020-05-31T05:43:40.460Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/util/">util</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -307,9 +326,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 词频云图]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
-
-<h1 id="python-制作词频云图"><a href="#python-制作词频云图" class="headerlink" title="python 制作词频云图"></a>python 制作词频云图</h1><p>[TOC] </p>
+        <h1 id="python-制作词频云图"><a href="#python-制作词频云图" class="headerlink" title="python 制作词频云图"></a>python 制作词频云图</h1><p>[TOC] </p>
 <h2 id="一、包下载"><a href="#一、包下载" class="headerlink" title="一、包下载"></a>一、包下载</h2><p><code>pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
 <h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wordcloud = WordCloud( </span><br><span class="line">    background_color=<span class="string">'white'</span>, <span class="comment"># 设置背景颜色 #mask=backgroud_Image, # 设置背景图片        font_path='simhei.ttf', # 若是有中文的话，这句代码必须添加，不然会出现方框，不出现汉字 </span></span><br><span class="line">    max_words=<span class="number">2000</span>, <span class="comment"># 设置最大现实的字数 #stopwords=STOPWORDS, # 设置停用词 max_font_size=150, # 设置字体最大值 </span></span><br><span class="line">    random_state=<span class="number">30</span> <span class="comment"># 设置有多少种随机生成状态，即有多少种配色方案 ) </span></span><br><span class="line">wordcloud.generate_from_text(text)  <span class="comment"># text 为jieba分好的词汇再用空格进行连接而成的字符串</span></span><br><span class="line">plt.imshow(wordcloud) plt.show()</span><br></pre></td></tr></table></figure>
 
@@ -317,9 +334,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" data-id="ckaunequ10004aotufoei3o42" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E5%88%B6%E4%BD%9C%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" data-id="ckaunz1ba000a70tufrl71e0j" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" rel="tag">词频云图</a></li></ul>
+
     </footer>
   </div>
   
@@ -333,6 +352,10 @@
   <time datetime="2020-05-31T05:43:40.458Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/util/">util</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -349,15 +372,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 测试, 性能]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
-
-<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1>
+        <h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" data-id="ckaunequ40006aotu87w54113" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" data-id="ckaunz1bb000b70tuhmk935zm" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
     </footer>
   </div>
   
@@ -371,6 +394,10 @@
   <time datetime="2020-05-31T05:43:40.454Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/util/">util</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -387,9 +414,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [数据增强, 工具]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
-
-<h1 id="Albumentation-的使用"><a href="#Albumentation-的使用" class="headerlink" title="Albumentation 的使用"></a>Albumentation 的使用</h1><p>[TOC]</p>
+        <h1 id="Albumentation-的使用"><a href="#Albumentation-的使用" class="headerlink" title="Albumentation 的使用"></a>Albumentation 的使用</h1><p>[TOC]</p>
 <blockquote>
 <p>安装: <code>pip install albumentation</code></p>
 <p>导入: <code>import albumentation as A</code></p>
@@ -408,9 +433,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" data-id="ckaunequ50007aotubtk1824i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E5%8C%85Albumentation/" data-id="ckaunz1bf000e70tu65i4dl2v" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/" rel="tag">数据增强</a></li></ul>
+
     </footer>
   </div>
   
@@ -424,6 +451,10 @@
   <time datetime="2020-05-31T05:43:40.417Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/base/">base</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -440,9 +471,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [生成器, 迭代器]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
-
-<h1 id="生成器和迭代器"><a href="#生成器和迭代器" class="headerlink" title="生成器和迭代器"></a>生成器和迭代器</h1><p>[TOC]</p>
+        <h1 id="生成器和迭代器"><a href="#生成器和迭代器" class="headerlink" title="生成器和迭代器"></a>生成器和迭代器</h1><p>[TOC]</p>
 <h2 id="一、生成器"><a href="#一、生成器" class="headerlink" title="一、生成器"></a>一、生成器</h2><h3 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h3><p> 如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间，在Python中，这种一边循环一边计算的机制，称为生成器：generator 。</p>
 <p> 生成器是一个特殊的程序，可以被用作控制循环的迭代行为，python中生成器是迭代器的一种，使用yield返回值函数，每次调用yield会暂停，而可以使用next()函数和send()函数恢复生成器。 </p>
 <h3 id="1-2-创建"><a href="#1-2-创建" class="headerlink" title="1.2 创建"></a>1.2 创建</h3><h4 id="1-2-1-生成器表达式"><a href="#1-2-1-生成器表达式" class="headerlink" title="1.2.1 生成器表达式"></a>1.2.1 生成器表达式</h4><p> 要创建一个generator，有很多种方法，第一种方法很简单，<strong>只有把一个列表生成式的[]中括号改为（）小括号，就创建一个generator</strong> </p>
@@ -473,9 +502,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" data-id="ckaunequ60008aotu7wh28aft" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E7%94%9F%E6%88%90%E5%99%A8%E5%92%8C%E8%BF%AD%E4%BB%A3%E5%99%A8/" data-id="ckaunz1bg000f70tuetb3d2us" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">生成器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" rel="tag">迭代器</a></li></ul>
+
     </footer>
   </div>
   
@@ -489,6 +520,10 @@
   <time datetime="2020-05-31T05:43:40.407Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/base/">base</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -505,9 +540,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [系统操作, 文件, 路径]</span><br><span class="line">categories: [Python, base]</span><br></pre></td></tr></table></figure>
-
-<h1 id="系统操作"><a href="#系统操作" class="headerlink" title="系统操作"></a>系统操作</h1><p>[TOC]</p>
+        <h1 id="系统操作"><a href="#系统操作" class="headerlink" title="系统操作"></a>系统操作</h1><p>[TOC]</p>
 <h2 id="一、文件"><a href="#一、文件" class="headerlink" title="一、文件"></a>一、文件</h2><ol>
 <li>创建文件（夹）</li>
 </ol>
@@ -542,9 +575,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" data-id="ckaunequ70009aotue0hy3uqm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" data-id="ckaunz1bj000i70tueeid1rkk" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%87%E4%BB%B6/" rel="tag">文件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" rel="tag">系统操作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E5%BE%84/" rel="tag">路径</a></li></ul>
+
     </footer>
   </div>
   
@@ -558,6 +593,10 @@
   <time datetime="2020-05-31T05:43:40.386Z" itemprop="datePublished">2020-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/util/">util</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -574,9 +613,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag: [工具, 命令行]</span><br><span class="line">categories: [Python, util]</span><br></pre></td></tr></table></figure>
-
-<h1 id="命令行交互"><a href="#命令行交互" class="headerlink" title="命令行交互"></a>命令行交互</h1><blockquote>
+        <h1 id="命令行交互"><a href="#命令行交互" class="headerlink" title="命令行交互"></a>命令行交互</h1><blockquote>
 <p>在多个文件或者不同语言协同的项目中，Python 脚本经常需要从命令行直接读取参数，下面介绍两个实用的命令行解析包。</p>
 </blockquote>
 <p>[TOC]</p>
@@ -625,9 +662,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/" data-id="ckauneqtz0002aotugaka5o5e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/31/python%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%94%A8%E6%B3%95/" data-id="ckaunz1b4000470tu5zu4exq9" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li></ul>
+
     </footer>
   </div>
   
@@ -647,12 +686,33 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/base/">base</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/util/">util</a></li></ul></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E5%8F%82/" rel="tag">传参</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" rel="tag">全局变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" rel="tag">命令行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E5%85%B8/" rel="tag">字典</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%95%E5%B1%82/" rel="tag">底层</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD/" rel="tag">性能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/" rel="tag">数据增强</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6/" rel="tag">文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" rel="tag">生成器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" rel="tag">系统操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/" rel="tag">装饰器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" rel="tag">词频云图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E5%BE%84/" rel="tag">路径</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" rel="tag">迭代器</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E4%BC%A0%E5%8F%82/" style="font-size: 10px;">传参</a> <a href="/tags/%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" style="font-size: 10px;">全局变量</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 10px;">命令行</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E5%AD%97%E5%85%B8/" style="font-size: 10px;">字典</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 20px;">工具</a> <a href="/tags/%E5%BA%95%E5%B1%82/" style="font-size: 10px;">底层</a> <a href="/tags/%E6%80%A7%E8%83%BD/" style="font-size: 10px;">性能</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/" style="font-size: 10px;">数据增强</a> <a href="/tags/%E6%96%87%E4%BB%B6/" style="font-size: 10px;">文件</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%94%9F%E6%88%90%E5%99%A8/" style="font-size: 10px;">生成器</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" style="font-size: 10px;">系统操作</a> <a href="/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/" style="font-size: 10px;">装饰器</a> <a href="/tags/%E8%AF%8D%E9%A2%91%E4%BA%91%E5%9B%BE/" style="font-size: 10px;">词频云图</a> <a href="/tags/%E8%B7%AF%E5%BE%84/" style="font-size: 10px;">路径</a> <a href="/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/" style="font-size: 10px;">迭代器</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
